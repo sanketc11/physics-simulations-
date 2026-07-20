@@ -27,6 +27,12 @@ field = arrow(
     color=color.blue
 )
 
+# Show Information
+info = label(
+    pos=vector(0, 2, 0),
+    text="",
+    height= 15
+)
 
 while True:
 
@@ -43,3 +49,10 @@ while True:
 
     # Update position
     particle.pos += v*dt
+
+    #Update Information
+    info.text = (
+    f"Velocity = {mag(v):.2f}\n"
+    f"Force = {mag(F):.2f}\n"
+    f"Kinetic Energy = {0.5*m*mag(v)**2:.2f}"
+)
